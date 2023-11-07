@@ -1,0 +1,99 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - My ASP.NET Application</title>
+    <link href="~/Content/Site.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <script src="~/Scripts/modernizr-2.6.2.js"></script>
+</head>
+
+<style>
+    .box-container {
+        border: 1px solid black;
+    }
+
+    h1 {
+        background: cornflowerblue;
+        text-align: center;
+        color: #fff;
+        padding: 40px;
+        margin: 0
+    }
+
+    .box-content {
+        display: flex;
+        flex-direction: row;
+    }
+
+    .navigation, .list-content {
+        border-right: 1px solid black;
+    }
+
+    .navigation {
+        width: 20%;
+    }
+
+    .list-content {
+        width: 70%;
+    }
+
+    .image-content {
+        width: 10%;
+    }
+
+    ul li {
+        padding-bottom: 12px;
+        list-style-type: none;
+        margin: 0
+    }
+
+        ul li a {
+            text-decoration: none;
+            color: cornflowerblue
+        }
+
+    .box-footer {
+        border-top: 1px solid black;
+    }
+
+        .box-footer h3 {
+            color: cornflowerblue;
+            text-align: center;
+        }
+</style>
+
+<body>
+    <div class="container body-content">
+        <div class="box-container">
+            <h1>Hanoi University of Industry</h1>
+            <div class="box-content">
+                <div class="navigation">
+                    <ul>
+                        <li>@Html.ActionLink("Giới thiệu", "GioiThieu", "Home")</li>
+                        <li>@Html.ActionLink("Tuyển sinh", "TuyenSinh", "Home")</li>
+                        <li>@Html.ActionLink("Đào tạo", "DaoTao", "Home")</li>
+                    </ul>
+                </div>
+                <div class="list-content">
+                    <ul>
+                        <li>@RenderBody()</li>
+                    </ul>
+                </div>
+                <div class="image-content">
+                    <ul>
+                        <li>@RenderSection("img")</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="box-footer">
+                <h3>NguyenThanhLam_2020601227_20224IT6021002</h3>
+            </div>
+        </div>
+    </div>
+
+    <script src="~/Scripts/jquery-1.10.2.min.js"></script>
+    <script src="~/Scripts/bootstrap.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,57 @@
+﻿@model  IEnumerable<KTTX_1._1.Models.Nhanvien>
+
+@{
+    ViewBag.Title = "DanhSach";
+}
+
+<h2>Danh sách nhân viên có số ngày làm < 20</h2>
+<table class="table" border="1" cellpadding="30" cellspacing="10" style="border-collapse: collapse">
+    <tr>
+        <th>Mã nhân viên</th>
+        <th>Họ tên</th>
+        <th>Địa chỉ</th>
+        <th>Số ngày làm</th>
+        <th>Lương ngày</th>
+    </tr>
+
+@foreach (var item in Model)
+{
+    if (item.songaylam < 20)
+    {
+        <tr>
+            <td>@Html.DisplayFor(modelItem => item.manv)</td>
+            <td>@Html.DisplayFor(modelItem => item.hoten)</td>
+            <td>@Html.DisplayFor(modelItem => item.diachi)</td>
+            <td>@Html.DisplayFor(modelItem => item.songaylam)</td>
+            <td>@Html.DisplayFor(modelItem => item.luongngay)</td>
+        </tr>
+    }
+}
+</table>
+
+
+
+<h2>Danh sách nhân viên có lương ngày > 190000</h2>
+<table class="table" border="1" cellpadding="30" cellspacing="10" style="border-collapse: collapse">
+    <tr>
+        <th>Mã nhân viên</th>
+        <th>Họ tên</th>
+        <th>Địa chỉ</th>
+        <th>Số ngày làm</th>
+        <th>Lương ngày</th>
+    </tr>
+
+@foreach (var item in Model)
+{
+    if (item.luongngay > 190000)
+    {
+        <tr>
+            <td>@Html.DisplayFor(modelItem => item.manv)</td>
+            <td>@Html.DisplayFor(modelItem => item.hoten)</td>
+            <td>@Html.DisplayFor(modelItem => item.diachi)</td>
+            <td>@Html.DisplayFor(modelItem => item.songaylam)</td>
+            <td>@Html.DisplayFor(modelItem => item.luongngay)</td>
+        </tr>
+    }
+}
+</table>

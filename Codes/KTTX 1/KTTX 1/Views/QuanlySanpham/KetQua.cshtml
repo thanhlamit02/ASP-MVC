@@ -1,0 +1,44 @@
+﻿@model KTTX_1.Models.Sanpham
+
+@{
+    ViewBag.Title = "KetQua";
+}
+
+<div>
+    <h4>Sản phẩm</h4>
+    <div>
+        <table border="1" cellpadding="28" cellspacing="6"">
+            <tr style="background-color: gray; color:#fff">
+                <th>@Html.Label("Mã sản phẩm")</th>
+                <th>@Html.Label("Tên sản phẩm")</th>
+                <th>@Html.Label("Số lượng")</th>
+                <th>@Html.Label("Giá tiền")</th>
+                <th>@Html.Label("Giảm giá")</th>
+                <th>@Html.Label("Thành tiền")</th>
+            </tr>
+            <tr>
+                <td>
+                    @Html.DisplayFor(model => model.masp)
+                </td>
+                <td>
+                    @Html.DisplayFor(model => model.tensp)
+                </td>
+                <td>
+                    @Html.DisplayFor(model => model.soluong)
+                </td>
+                <td>
+                    @Html.DisplayFor(model => model.giatien)
+                </td>
+                <td>
+                    @Html.DisplayFor(model => model.giamgia)
+                </td>
+                <td>
+                    @Html.DisplayFor(model => model.thanhtien)
+                </td>
+
+            </tr>
+        </table>
+    </div>
+
+</div>
+

@@ -1,0 +1,60 @@
+﻿﻿@model IEnumerable<BAI_TH_13._2.Models.SanphamMua>
+@{
+    ViewBag.Title = "XemGioHang";
+}
+
+<h2>Xem giỏ hàng</h2>
+@{
+    List<BAI_TH_13._2.Models.Sanpham> ds = (List<BAI_TH_13._2.Models.Sanpham>)Session["hanghoa"];
+
+}
+@if (Model != null)
+{
+
+    <table class="table-bordered" width="500">
+        <tr style="background-color: #ffffcc">
+            <th align="center" Mã sản phẩm></th>
+            <th>Tên sản phẩm</th>
+            <th>Hình ảnh</th>
+            <th>Số lượng</th>
+            <th>Giá tiền</th>
+            <th>Chức năng</th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            BAI_TH_13._2.Models.Sanpham s = new BAI_TH_13._2.Models.Sanpham(item.masp);
+            int vitri = ds.IndexOf(s);
+            s = ds[vitri];
+            <tr>
+                <td align="center">@s.masp</td>
+                <td>@s.tensp</td>
+                <td align="center">
+                    <img src="~/Content/Images/@s.hinhanh" width="80" />
+                </td>
+                <td align="center">@item.soluong</td>
+                <td align="center">
+                    @s.giatien
+                </td>
+                <td align="center">
+                    <a href="@Url.Action("XoaSanPham", "MuaBan", new {masp=item.masp})">Xoá sản phẩm</a>
+                </td>
+
+            </tr>
+
+        }
+    </table>
+
+}
+else
+{
+    <h3>Bạn chưa chọn mua sản phẩm</h3>
+}
+<br />
+@Html.ActionLink("Xoá tất cả", "XoaTatCaGioHang", "MuaBan")
+<br />
+<br />
+@Html.ActionLink("Mua tiếp", "Index", "MuaBan")
+<br />
+<br />
+@Html.ActionLink("Đặt hàng", "Datmua", "MuaBan")

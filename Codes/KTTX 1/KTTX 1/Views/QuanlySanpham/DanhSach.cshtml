@@ -1,0 +1,100 @@
+﻿@model IEnumerable<KTTX_1.Models.Sanpham>
+
+@{
+    ViewBag.Title = "DanhSach";
+}
+
+<h2>Giá tiền > 100</h2>
+
+<table class="table">
+<tr>
+    <th>
+        Mã sản phẩm
+    </th>
+    <th>
+        Tên sản phẩm
+    </th>
+    <th>
+        Số lượng
+    </th>
+    <th>
+        Giá tiền
+    </th>
+    <th>
+        Giảm giá
+    </th>
+    <th></th>
+</tr>
+
+@foreach (var item in Model)
+{
+    if (item.giatien > 100)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.masp)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.tensp)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.soluong)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.giatien)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.giamgia)
+            </td>
+
+        </tr>
+    }
+}
+
+</table>
+<h2> Có giảm giá</h2>
+<table class="table">
+    <tr>
+        <th>
+            Mã sản phẩm
+        </th>
+        <th>
+            Tên sản phẩm
+        </th>
+        <th>
+            Số lượng
+        </th>
+        <th>
+            Giá tiền
+        </th>
+        <th>
+            Giảm giá
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        if (item.giamgia == "1")
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.masp)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.tensp)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.soluong)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.giatien)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.giamgia)
+                </td>
+            </tr>
+        }
+    }
+
+</table>

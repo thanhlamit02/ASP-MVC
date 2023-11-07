@@ -1,0 +1,60 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - My ASP.NET Application</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+
+<style>
+    *{
+        font-family: Calibri;
+    }
+    h1{
+        color: #fff;
+        text-align: center;
+        padding: 36px;
+        margin: 0;
+        background: #3f48cc;
+    }
+
+    ul{
+        margin-top: 8px;
+        background: #6871d7;
+        display: flex;
+    }
+
+    ul li {
+        list-style-type: none;
+        padding: 8px;
+        font-size: 20px;
+        color: #fff;
+        position: relative;
+        left: 1100px;
+    }
+
+    .render{
+        margin: auto;
+        width: 90%;
+        display: flex;
+        flex-direction: column;
+        align-items: center
+    }
+
+</style>
+
+<body>
+    <div class="box-container">
+        <h1>KIỂM TRA 1 - ASP.NET</h1>
+        <ul>
+            <li>@Html.ActionLink("Thêm sản phẩm", "Input", "QuanlySanpham", new { area = "" }, new { @class = "nav-link" })</li>
+            <li>@Html.ActionLink("Hiển thị danh sách", "DanhSach", "QuanlySanpham", new { area = "" }, new { @class = "nav-link" })</li>
+        </ul>
+    </div>
+    <div class="render">
+        @RenderBody()
+    </div>
+</body>
+</html>

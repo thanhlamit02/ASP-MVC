@@ -1,0 +1,41 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+<style>
+    tr, td{
+        border: 1px solid black;
+    }
+</style>
+
+@{ 
+    var day = DateTime.Now;
+    var hour = DateTime.Now.Hour;
+    var minutes = DateTime.Now.Minute;
+    var second = DateTime.Now.Second;
+
+}
+
+<table border="1" style="border-collapse:collapse" cellpadding="16">
+    <tr>
+        <td style="font-weight: bold">Name</td>
+        <td style="font-weight: bold">Value</td>
+    </tr>
+    <tr>
+        <td>Today is:</td>
+        <td>@day</td>
+    </tr>
+    <tr>
+        <td>Hour:</td>
+        <td>@hour</td>
+    </tr>
+    <tr>
+        <td>Minutes:</td>
+        <td>@minutes</td>
+    </tr>
+    <tr>
+        <td>Second:</td>
+        <td>@second</td>
+    </tr>
+</table>
+

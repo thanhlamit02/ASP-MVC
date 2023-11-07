@@ -1,0 +1,40 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+<h2>Tính Bình Phương</h2>
+
+@{
+    double kq = 0;
+    double a = 0;
+    if (Request["number"] != null)
+    {
+        a = Double.Parse(Request["number"]);
+        kq = a * a;
+    }
+}
+@if (@ViewBag.msg != "")
+{
+    using (Html.BeginForm("Login", "Home"))
+    {
+        <p>@ViewBag.msg</p>
+        <input type="submit" value="Login" />
+    }
+}
+else
+{
+    using (Html.BeginForm())
+    {
+        <div>
+            @Html.Label("Nhập số: ")
+            @Html.TextBox("number")
+            <input type="submit" value="Tính" />
+        </div>
+        <div>
+            @Html.Label("Kết quả: ")
+            @Html.TextBox("kq", @kq)
+        </div>
+
+    }
+}
+

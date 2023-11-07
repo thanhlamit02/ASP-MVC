@@ -1,0 +1,30 @@
+﻿@model IEnumerable<Bai12.Models.User>
+
+@{
+    ViewBag.Title = "Input";
+}
+
+@{
+    var error = (String)Session["error"];
+}
+
+<h1>@error</h1>
+
+@using (Html.BeginForm("Login", "Home"))
+{
+    <table width="400px">
+        <tr>
+            <td>@Html.Label("Username: ")</td>
+            <td>@Html.TextBox("username")</td>
+        </tr>
+        <tr>
+            <td>@Html.Label("Password: ")</td>
+            <td>@Html.TextBox("password")</td>
+        </tr>
+        <tr>
+            <td colspan="2" align="center">
+                <input type="submit" value="Login" />
+            </td>
+        </tr>
+    </table>
+}

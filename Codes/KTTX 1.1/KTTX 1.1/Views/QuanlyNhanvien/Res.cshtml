@@ -1,0 +1,42 @@
+﻿@model KTTX_1._1.Models.Nhanvien
+
+@{
+    ViewBag.Title = "KetQua";
+}
+
+
+<div>
+    <div>
+        <table border="1" cellpadding="30" cellspacing="0">
+            <tr style="background-color: gray; color:white">
+                <th>@Html.Label("Mã Nhân viên")</th>
+                <th>@Html.Label("Họ tên")</th>
+                <th>@Html.Label("Địa chỉ")</th>
+                <th>@Html.Label("Số ngày làm")</th>
+                <th>@Html.Label("Lương ngày")</th>
+                <th>@Html.Label("Tiền lương")</th>
+            </tr>
+            <tr>
+                <td>
+                    @Html.DisplayFor(model => model.manv)
+                </td>
+                <td>
+                    @Html.DisplayFor(model => model.hoten)
+                </td>
+                <td>
+                    @Html.DisplayFor(model => model.diachi)
+                </td>
+                <td>
+                    @Html.DisplayFor(model => model.songaylam)
+                </td>
+                <td>
+                    @Html.DisplayFor(model => model.luongngay)
+                </td>
+                <td>
+                    @Html.DisplayFor(model => model.tienluong)
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
+

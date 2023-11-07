@@ -1,0 +1,38 @@
+﻿
+@{
+    ViewBag.Title = "Output";
+}
+
+<h2>Output</h2>
+
+<style>
+    td, th {
+        padding: 5px;
+        text-align: center;
+    }
+</style>
+
+<table class="table-bordered" width="700">
+    <tr style="background-color: #ffffcc">
+        <th align="center">Mã nhân viên</th>
+        <th>Họ tên nhân viên</th>
+        <th>Số ngày công</th>
+        <th>Tiền một ngày công</th>
+        <th>Lương</th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.maNV</td>
+            <td>@item.hoTen</td>
+            <td>@item.soNgayCong</td>
+            <td>@item.tienCong</td>
+            <td>@item.luong</td>
+        </tr>
+    }
+</table>
+<br />
+<br />
+
+@Html.ActionLink("Thêm nhân viên", "Add", "NhanVien")

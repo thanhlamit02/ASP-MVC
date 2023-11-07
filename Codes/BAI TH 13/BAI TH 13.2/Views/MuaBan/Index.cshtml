@@ -1,0 +1,34 @@
+﻿@model IEnumerable<BAI_TH_13._2.Models.Sanpham>
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Cửa hàng online</h2>
+<h4>Quý khách chọn mua các sản phẩm dưới đây</h4>
+<table class="table-bordered" width="800">
+    <tr style="background-color: #ffffcc">
+        <td align="center">Mã sản phẩm</td>
+        <td>Tên sản phẩm</td>
+        <td>Hình ảnh</td>
+        <td align="center">Giá tiền</td>
+        <td>Mua hàng</td>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td align="center">@item.masp</td>
+            <td>@item.tensp </td>
+            <td align="center">
+                <img src="~/Content/Images/@item.hinhanh" width="80" />
+            </td>
+            <td align="center">@item.giatien </td>
+            <td align="center">
+                @Html.ActionLink("Chon mua", "Chonmua", "MuaBan", new BAI_TH_13._2.Models.Sanpham { masp = item.masp }, null)
+            </td>
+        </tr>
+    }
+</table>
+<br />
+<br />
+@Html.ActionLink("Xem giỏ hàng", "XemGioHang", "MuaBan")
+

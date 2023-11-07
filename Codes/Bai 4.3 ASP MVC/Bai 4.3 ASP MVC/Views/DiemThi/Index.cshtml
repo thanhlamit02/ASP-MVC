@@ -1,0 +1,50 @@
+﻿﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+<form action="/DiemThi/TinhDiemThi" method="post">
+    <table border="1" cellpadding="0" cellspacing="0">
+        <caption><h2>NHẬP ĐIỂM THI</h2></caption>
+        <tr>
+            <td>Họ tên thí sinh: </td>
+            <td>
+                <input type="text" name="hoTen" />
+                <input id="kiemTra" type="checkbox" name="kiemTra" />
+                <label for="kiemTra">Gia đình chính sách</label>
+            </td>
+        </tr>
+        <tr>
+            <td>Chọn khu vực:</td>
+            <td>
+                <select name="khuVuc">
+                    <option value="Khu vực A">Khu vực A</option>
+                    <option value="Khu vực B">Khu vực B</option>
+                    <option value="Khu vực C">Khu vực C</option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td>Vào điểm Toán:</td>
+            <td>
+                <input type="number" name="diemToan" step="0.1" min="0" max="10" />
+            </td>
+        </tr>
+        <tr>
+            <td>Vào điểm Lý:</td>
+            <td>
+                <input type="number" name="diemLy" step="0.1" min="0" max="10" />
+            </td>
+        </tr>
+        <tr>
+            <td>Vào điểm Hoá:</td>
+            <td>
+                <input type="number" name="diemHoa" step="0.1" min="0" max="10" />
+        </tr>
+        <tr>
+            <td colspan="2" align="center">
+                <button type="submit">Tính</button>
+            </td>
+        </tr>
+    </table>
+</form>

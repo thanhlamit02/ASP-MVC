@@ -1,0 +1,33 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+@model List<ASP.Net_Course.Models.MayTinh>
+
+<main>
+    <style>
+    </style>
+
+    <h4>Danh sách 2 máy tính giá thấp nhất</h4>
+    <table>
+        <thead>
+            <tr>Mã máy</tr>
+            <tr>Dòng máy</tr>
+            <tr>Giá bán</tr>
+            <tr>Ngày sản xuất</tr>
+            <tr>Hãng sản   xuất</tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.maMay</td>
+                    <td>@item.dongMay</td>
+                    <td>@string.Format("{0:#, 0}", item.giaBan)</td>
+                    <td>@item.ngaySX</td>
+                    <td>@item.hangSX</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</main>

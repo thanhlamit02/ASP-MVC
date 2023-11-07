@@ -1,0 +1,61 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+<form action="/TinhTienLuong/TinhTienLuong" method="post">
+    <table border="1" cellpadding="0" cellspacing="0" width="500px">
+        <tr>
+            <td>Mã NV:</td>
+            <td><input type="text" name="maNV" value="" /></td>
+        </tr>
+        <tr>
+            <td>Bậc lương:</td>
+            <td><input type="number" name="bacLuong" value="" /></td>
+        </tr>
+        <tr>
+            <td>Ngày công:</td>
+            <td><input type="number" name="ngayCong" value="" /></td>
+        </tr>
+        <tr>
+            <td>Chức vụ:</td>
+            <td>
+                <select name="chucVu">
+                    <option value="Trưởng phòng">Trưởng phòng</option>
+                    <option value="Phó phòng">Phó phòng</option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td>Giới tính:</td>
+            <td>
+                <input type="radio" name="gioiTinh" value="Nam" />
+                <label for="Nam">Nam</label>
+                <input type="radio" name="gioiTinh" value="Nữ" />
+                <label for="Nữ">Nữ</label>
+            </td>
+        </tr>
+        <tr>
+            <td>Ngoại ngữ:</td>
+            <td>
+                <input type="checkbox" name="ngoaiNgu" value="Anh" />
+                <label for="Anh">Anh</label>
+                <input type="checkbox" name="ngoaiNgu" value="Pháp" />
+                <label for="Pháp">Pháp</label>
+                <input type="checkbox" name="ngoaiNgu" value="Nga" />
+                <label for="Nga">Nga</label>
+            </td>
+        </tr>
+        <tr>
+            <td>Tiền lĩnh:</td>
+            <td><input type="number" name="tienLinh" value="" /></td>
+        </tr>
+        <tr>
+            <td colspan="2" align="center">
+                <button type="submit">Tính</button>
+                <button type="reset">Xóa</button>
+            </td>
+        </tr>
+    </table>
+</form>
+

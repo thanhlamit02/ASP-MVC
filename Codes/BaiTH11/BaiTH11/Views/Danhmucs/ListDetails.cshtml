@@ -1,0 +1,57 @@
+﻿@model IEnumerable<BaiTH11.Models.Sanpham>
+
+@{
+    ViewBag.Title = "ListDetails";
+}
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Danhmuc.TenDanhmuc)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Tenvd)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TenAnh)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Mota)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Giatien)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Soluong)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Danhmuc.TenDanhmuc)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Tenvd)
+        </td>
+        <td>
+            @{
+                string ImagePath = "~/wwwroot/Images/" + item.TenAnh;
+            }
+            <img src="@Url.Content(ImagePath)" width="100" class="img-thumbnail" />
+            <br />
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Mota)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Giatien)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Soluong)
+        </td>
+    </tr>
+}
+
+</table>

@@ -1,0 +1,39 @@
+﻿@model IEnumerable<BaiTH11.Models.Danhmuc>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>DANH MỤC HÀNG</h2>
+
+<p>
+    @Html.ActionLink("Tạo mới", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            Tên danh mục
+        </th>
+        <th>
+            Mô tả
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.ActionLink(item.TenDanhmuc, "ListDetails", new {id = item.MaDanhmuc})
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Mota)
+        </td>
+        <td>
+            @Html.ActionLink("Chỉnh sửa", "Edit", new { id=item.MaDanhmuc }) |
+            @Html.ActionLink("Chi tiết", "Details", new { id=item.MaDanhmuc }) |
+            @Html.ActionLink("Xóa", "Delete", new { id=item.MaDanhmuc })
+        </td>
+    </tr>
+}
+
+</table>

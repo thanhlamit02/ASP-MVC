@@ -1,0 +1,41 @@
+﻿@model Bai_7._2_ASP_MVC.Models.RegistorInfo
+
+@{
+    ViewBag.Title = "Regis";
+}
+
+<div>
+    <h4>RegistorInfo</h4>
+    <hr />
+    <table border="1" style="border-collapse: collapse" cellpadding="20">
+        <tr style="background: gray; color: white; border: 1px solid black">
+            <td>First name</td>
+            <td>Last name</td>
+            <td>Email</td>
+            <td>Password</td>
+            <td>City</td>
+            <td>Gender</td>
+        </tr>
+        <tr>
+            <td>
+                @Html.DisplayFor(model => model.firstName)
+            </td>
+            <td>
+                @Html.DisplayFor(model => model.lastName)
+            </td>
+            <td>
+                @Html.DisplayFor(model => model.email)
+            </td>
+            <td>
+                @Html.DisplayFor(model => model.password)
+            </td>
+            <td>
+                @Html.DisplayFor(model => model.city)
+            </td>
+            <td>
+                @Html.DisplayFor(model => model.gender)
+            </td>
+        </tr>
+    </table>
+ </div>   
+        

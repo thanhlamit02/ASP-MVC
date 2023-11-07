@@ -1,0 +1,56 @@
+﻿@{
+    Layout = null;
+}
+
+@using (Html.BeginForm("Regis", "Registration"))
+{
+    <table style="border-collapse:collapse" cellpadding="5">
+        <tr>
+            <td>@Html.Label("First name")</td>
+            <td>@Html.TextBox("firstName")</td>
+        </tr>
+        <tr>
+            <td>@Html.Label("Last name")</td>
+            <td>@Html.TextBox("lastName")</td>
+        </tr>
+        <tr>
+            <td>@Html.Label("Email")</td>
+            <td>@Html.TextBox("email")</td>
+        </tr>
+        <tr>
+            <td>@Html.Label("Password")</td>
+            <td>@Html.TextBox("password")</td>
+        </tr>
+        <tr>
+            <td>@Html.Label("City")</td>
+            <td>
+                @{
+                    IEnumerable<string> cityList = new List<string> { "Hanoi", "Danang", "tpHCM" };
+                }
+                @Html.DropDownList("city", new SelectList(cityList, cityList.FirstOrDefault()), "--Select--")
+            </td>
+        </tr>
+        <tr>
+            <td>@Html.Label("Gender")</td>
+            <td>
+                @Html.RadioButton("gender", "Male") Male
+                @Html.RadioButton("gender", "Female") Female
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <input type="submit" value="Regis" />
+                <input type="reset" value="Cancel" />
+            </td>
+        </tr>
+    </table>
+}
+
+<style>
+    table{
+        border: 1px solid black;
+    }
+</style>
+
+
+

@@ -1,0 +1,32 @@
+1. MVC - Model Controller View
+- Model: Dữ liệu
+- View: Giao diện
+- Controller: Xử lý
+
+2. Tạo 1 project
+- Controller -> Action -> View
+
+3. Teamcode bằng SVN
+- Lưu trữ phiên bản
+- Cập nhật code:
+	+ Merge: Gộp code
+	+ Select version: Chọn phiên bản <- Conflict
+- Thêm file mới: Add
+- Xóa file: Delete
+
+4. Các cách chuyển hướng trong Action
+- Can thiệp vào App_Start -> RouteConfig.cs -> chỉnh action theo ý muốn
+- Chuyển hướng qua action khác, cùng Controller:
+	return RedirectToAction("ActionName");
+- Chuyển hướng qua action khác, khác Controller:
+	return RedirectToAction("ActionName", "ControllerName");
+- Chuyển hướng theo URL:
+	return Redirect("URL link");
+
+5. Tạo RenderSection cho LayoutPage
+- Truyền string: ViewBag.Title = "Home";
+- Truyền số: ViewBag.Title = 1;
+- Truyền 1 list:
+	ViewBag.NameList = new List<string> {
+		"Abc", "XYZ" }
+- @Html.Raw(Biến số đầu vào)

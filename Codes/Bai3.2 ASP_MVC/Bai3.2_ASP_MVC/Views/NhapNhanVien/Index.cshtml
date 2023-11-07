@@ -1,0 +1,77 @@
+﻿<table>
+    <tr>
+        <td class="title">Mã nhân viên: </td>
+        <td><input type="text" name="employee-id" value="" /></td>
+    </tr>
+    <tr>
+        <td class="title">Họ tên: </td>
+        <td><input type="text" name="employee-name" value="" /></td>
+    </tr>
+    <tr>
+        <td class="title">Ngày sinh: </td>
+        <td><input type="text" name="employee-dateOfBirth" value="" /></td>
+    </tr>
+    <tr>
+        <td class="title">Giới tính: </td>
+        <td>
+            <input type="radio" name="employee-gender" value="Nam" />
+            <label>Nam</label>
+            <input type="radio" name="employee-gender" value="Nữ" />
+            <label>Nữ</label>
+        </td>
+    </tr>
+    <tr>
+        <td class="title">Chức vụ: </td>
+        <td>
+            <select>
+                <option value="employee-levels">Trưởng phòng</option>
+                <option value="employee-levels">Phó phòng</option>
+                <option value="employee-levels">Tổ trưởng</option>
+            </select>
+        </td>
+    </tr>
+    <tr>
+        <td class="title">Ngoại ngữ: </td>
+        <td>
+            <input type="checkbox" name="employee-languages" value="Anh" />
+            <label>Anh</label>
+            <input type="checkbox" name="employee-languages" value="Pháp" />
+            <label>Pháp</label>
+            <input type="checkbox" name="employee-languages" value="Nga" />
+            <label>Nga</label>
+        </td>
+    </tr>
+    <tr>
+        <td class="title" colspan="2" style="text-align:center">
+            <button type="submit">Lưu</button>
+            <button type="reset">Xóa</button>
+        </td>
+    </tr>
+</table>
+
+<style>
+    table, tr, td{
+        border: 1px solid black;
+        border-collapse: collapse;
+        padding: 8px 12px;
+    }
+
+    table{
+        width: 50%
+    }
+
+    button {
+        padding: 8px 24px;
+        border-radius: 8px;
+        margin: 0 12px 0 12px;
+    }
+
+    button:active{
+        scale: 0.9;
+    }
+
+    .title {
+        font-weight: 800;
+        width: 28%;
+    }
+</style>

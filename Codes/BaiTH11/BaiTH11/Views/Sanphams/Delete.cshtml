@@ -1,0 +1,73 @@
+﻿@model BaiTH11.Models.Sanpham
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>XÓA SẢN PHẨM</h2>
+
+<h3>Bạn có chắc chắn muốn xóa sản phẩm này?</h3>
+<div>
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Danhmuc.TenDanhmuc)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Danhmuc.TenDanhmuc)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Tenvd)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Tenvd)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TenAnh)
+        </dt>
+
+        <dd>
+            @{
+                string ImagePath = "~/wwwroot/Images/" + Model.TenAnh;
+            }
+            <img src="@Url.Content(ImagePath)" width="100" class="img-thumbnail" />
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Mota)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Mota)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Giatien)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Giatien)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Soluong)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Soluong)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

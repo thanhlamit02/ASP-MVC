@@ -1,0 +1,62 @@
+﻿@model BAI_TH_15._1.Models.Student
+@{ 
+    ViewBag.Title = "Student";
+}
+
+@using (Html.BeginForm())
+{
+    <div>
+        <h6>Họ tên</h6>
+        @Html.TextBoxFor(model => model.FullName)
+        @Html.ValidationMessageFor(model => model.FullName)
+    </div>
+    <div>
+        <h6>Email</h6>
+        @Html.TextBoxFor(model => model.Email)
+        @Html.ValidationMessageFor(model => model.Email)
+    </div>
+    <div>
+        <h6>Số điện thoại</h6>
+        @Html.TextBoxFor(model => model.PhoneNumber)
+        @Html.ValidationMessageFor(model => model.PhoneNumber)
+    </div>
+    <div>
+        <h6>Tỉnh</h6>
+        @Html.DropDownListFor(model => model.Province, new SelectList(new[] { "Tỉnh A", "Tỉnh B", "Tỉnh C" }))
+        @Html.ValidationMessageFor(model => model.Province)
+    </div>
+    <div>
+        <h6>Huyện</h6>
+        @Html.DropDownListFor(model => model.District, new SelectList(new[] { "Huyện 1", "Huyện 2", "Huyện 3" }))
+        @Html.ValidationMessageFor(model => model.District)
+    </div>
+    <br />
+    <div>
+        <input type="submit" value="Gửi đi" />
+    </div>
+}
+
+@section scripts {
+    <script>
+        $(function () {
+            // Sử dụng Ajax để lấy danh sách huyện dựa trên tỉnh đã chọn
+            $("#Province").change(function () {
+                var selectedProvince = $(this).val();
+                $.ajax({
+                    url: '@Url.Action("GetDistricts", "Student")',
+                    type: 'GET',
+                    data: { province: selectedProvince },
+                    success: function (data) {
+                        // Xóa danh sách huyện hiện tại
+                        $("#District").empty();
+                        // Thêm danh sách huyện mới
+                        $.each(data, function (i, district) {
+                            $("#District").append($('<option></option>').val(district).html(district));
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+}
+

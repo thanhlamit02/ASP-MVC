@@ -1,0 +1,37 @@
+﻿@model Bai_5._3_ASP_MVC.Models.MailInfo
+
+@{
+    ViewBag.Title = "Index";
+}
+
+@using (Html.BeginForm("Index", "SendMail", FormMethod.Post, new { enctype = "multipart/form-data" })) 
+{ 
+    <h2>Send Mail With Attachment</h2>
+    <div>
+        <h3>From:</h3>
+        <div>@Html.TextBoxFor(model => model.From)</div>
+    </div>
+    <div>
+        <h3>To:</h3>
+        <div>@Html.TextBoxFor(model => model.To)</div>
+    </div>
+    <div>
+        <h3>Subject:</h3>
+        <div>@Html.TextBoxFor(model => model.Subject)</div>
+    </div>
+    <div>
+        <h3>Attachment:</h3>
+        <input type="file" name="file"/>
+    </div>
+    <div>
+        <h3>Notes:</h3>
+        <div>@Html.TextAreaFor(model => model.Body, new{ rows = "10", cols = "25" }) </div>
+    </div>
+    <div>
+        <input type="submit" value="Send"/>
+    </div>
+    <span style="color: green">@ViewBag.Message</span>
+}
+
+
+

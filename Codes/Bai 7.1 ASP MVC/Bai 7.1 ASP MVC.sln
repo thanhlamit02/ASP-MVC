@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.6.33723.286
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bai 7.1 ASP MVC", "Bai 7.1 ASP MVC\Bai 7.1 ASP MVC.csproj", "{B5B73297-B4D7-4963-B52F-8A2F375FBBA7}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B5B73297-B4D7-4963-B52F-8A2F375FBBA7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B5B73297-B4D7-4963-B52F-8A2F375FBBA7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B5B73297-B4D7-4963-B52F-8A2F375FBBA7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B5B73297-B4D7-4963-B52F-8A2F375FBBA7}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {6587F423-7F85-4417-ACD7-FC3619ECBFC0}
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,47 @@
+﻿
+@{
+    ViewBag.Title = "Cau4";
+}
+
+@using (Html.BeginForm("Res", "QuanlyNhanvien", FormMethod.Post))
+{
+    @Html.AntiForgeryToken()
+    <form>
+        <table>
+            <tr>
+                <td><label>Mã Nhân Viên</label></td>
+                <td><input name="manv" /></td>
+            </tr>
+            <tr>
+                <td><label>Họ Tên</label></td>
+                <td><input name="hoten" /></td>
+            </tr>
+            <tr>
+                <td><label>Địa Chỉ</label></td>
+                <td>
+                    <select name="diachi">
+                        <option>Hà Nội</option>
+                        <option>Hải Phòng</option>
+                        <option>Quảng Ninh</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td><label>Số ngày làm</label></td>
+                <td><input name="songaylam" /></td>
+            </tr>
+            <tr>
+                <td><label>Lương Ngày</label></td>
+                <td><input name="luongngay" /></td>
+            </tr>
+            <tr>
+                <th colspan="2" align="center">
+                    <input type="submit" value="Tính" />
+                </th>
+            </tr>
+        </table>
+
+    </form>
+}
+
+

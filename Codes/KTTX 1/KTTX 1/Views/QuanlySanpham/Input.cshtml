@@ -1,0 +1,46 @@
+﻿
+@{
+    ViewBag.Title = "Input";
+}
+
+
+@using (Html.BeginForm("KetQua", "QuanlySanpham", FormMethod.Post))
+{
+    @Html.AntiForgeryToken()
+    <form>
+        <table>
+            <tr>
+                <td><label>Mã sản phẩm</label></td>
+                <td><input name="masp" type="text" /></td>
+            </tr>
+            <tr>
+                <td><label>Tên sản phẩm</label></td>
+                <td><input name="tensp" type="text"/></td>
+            </tr>
+            <tr>
+                <td><label>Số lượng</label></td>
+                <td><input name="soluong" type="number"/></td>
+            </tr>
+            <tr>
+                <td><label>Giá tiền</label></td>
+                <td><input name="giatien"  type="number"/></td>
+            </tr>
+            <tr>
+                <td><label>Giảm giá</label></td>
+                <td>
+                    <label>Có</label>
+                    <input type="radio" name="giamgia" value="Có" />
+                    <label>Không</label>
+                    <input type="radio" name="giamgia" value="Không" />
+                </td>
+            </tr>
+            <tr>
+                <th colspan="2" align="center">
+                    <input type="submit" value="Tính" />
+                </th>
+            </tr>
+        </table>
+    </form>
+}
+
+

@@ -1,0 +1,66 @@
+﻿@model IEnumerable<TX2_De1.Models.Trangsuc>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Thêm mới", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            Tên danh mục
+        </th>
+        <th>
+            Tên trang sức
+        </th>
+        <th>
+            Ảnh
+        </th>
+        <th>
+            Mô tả
+        </th>
+        <th>
+            Số lượng
+        </th>
+        <th>
+            Giá tiền 
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Danhmuc.TenDanhmuc)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TenTs)
+        </td>
+        <td>
+            @{ 
+                string ImgPath = "~/wwwroot/Images/" + item.Anh;
+                <img src="@Url.Content(ImgPath)" width="100" class="img-thumbnail"/>
+            }
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Mota)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Soluong)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Giatien)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.MaTs }) |
+            @Html.ActionLink("Details", "Details", new { id=item.MaTs }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.MaTs })
+        </td>
+    </tr>
+}
+
+</table>

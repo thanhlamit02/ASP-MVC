@@ -1,0 +1,33 @@
+﻿@model Bai_5._2_ASP_MVC.Models.MailInfo
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Send Mail</h2>
+
+
+@using (Html.BeginForm("Index", "Mail", FormMethod.Post))
+{
+    <div>
+        @Html.LabelFor(m => m.From, "From") <br />
+        @Html.EditorFor(m => m.From)
+    </div>
+    <div>
+        @Html.LabelFor(m => m.Password, "Password") <br />
+        @Html.PasswordFor(m => m.Password)
+    </div>
+    <div>
+        @Html.LabelFor(m => m.To, "To") <br />
+        @Html.EditorFor(m => m.To)
+    </div>
+    <div>
+        @Html.LabelFor(m => m.Subject, "Subject") <br />
+        @Html.EditorFor(m => m.Subject)
+    </div>
+    <div>
+        @Html.LabelFor(m => m.Body, "Body") <br />
+        @Html.TextAreaFor(m => m.Body, new { @rows = "5", @cols = "50" })
+    </div>
+    <input type="submit" value="Send" />
+}

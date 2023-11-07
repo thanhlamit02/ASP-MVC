@@ -1,0 +1,41 @@
+﻿@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<table>
+    <tr>
+        <td colspan="2" style="font-weight: 600"> Thông tin sinh viên</td>
+    </tr>
+    <tr>
+        <td>Mã SV:</td>
+        <td>SV01</td>
+    </tr>
+    <tr>
+        <td>Họ và tên:</td>
+        <td>Lê Thị Vân:</td>
+    </tr>
+    <tr>
+        <td>Ngày sinh:</td>
+        <td>16-09-2003</td>
+    </tr>
+    <tr>
+        <td>Quê quán:</td>
+        <td>Nam Từ Liêm, Hà Nội</td>
+    </tr>
+</table>
+<button style="margin: 12px 0 0 0">@Html.ActionLink("Quay lại", "Index", "Home")</button>
+
+
+<style>
+    table, tr, td {
+        border: 1px solid black;
+        border-collapse: collapse;
+        padding: 8px 12px;
+        font-weight: 400;
+    }
+
+    table {
+        width: 50%;
+    }
+</style>

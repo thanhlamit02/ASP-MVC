@@ -1,0 +1,115 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+
+<style>
+    .box {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+    }
+
+    .label, .box-input {
+        display: flex;
+        flex-direction: column;
+        margin-right: 40px;
+    }
+
+    .label label {
+        padding: 8px;
+    }
+
+    .box-input input {
+        margin: 4px;
+        padding: 4px;
+    }
+
+    .btn-res {
+        margin: 32px;
+    }
+
+    .btn-res button {
+        padding: 12px 20px;
+        border-radius: 8px;
+        background: brown;
+        color: #fff;
+        font-size: 12px;
+    }
+
+    .btn-res button:active {
+        scale: 0.8;
+    }
+</style>
+
+@{
+    string res = "";
+    double a = 0, b = 0;
+
+    if (Request["firstNum"] != null && (Request["secondNum"] != null))
+    {
+        a = Double.Parse(Request["firstNum"]);
+        b = Double.Parse(Request["secondNum"]);
+        var cal = Request["cal"];
+        switch (cal)
+        {
+            case "+":
+                {
+                    res = (a + b).ToString();
+                    break;
+                }
+            case "-":
+                {
+                    res = (a - b).ToString();
+                    break;
+                }
+            case "*":
+                {
+                    res = (a * b).ToString();
+                    break;
+                }
+            case "/":
+                {
+                    if (b != 0)
+                    {
+                        res = (a / b).ToString();
+                    }
+                    else
+                    {
+                        res = "Khong duoc chia cho 0";
+                    }
+                    break;
+                }
+
+        }
+    }
+
+}
+
+
+@using (Html.BeginForm())
+{
+    <div class="box">
+        <div class="label">
+            @Html.Label("Nhập số thứ nhất")
+            @Html.Label("Nhập số thứ hai")
+            @Html.Label("Kết quả: ")
+        </div>
+
+        <div class="box-input">
+            @Html.TextBox("firstNum", @a)
+            @Html.TextBox("secondNum", @b)
+            @Html.TextBox("result", @res)
+        </div>
+    </div>
+
+    <div class="btn-res">
+        <button type="submit" value="+" name="cal">Cộng</button>
+        <button type="submit" value="-" name="cal">Trừ</button>
+        <button type="submit" value="*" name="cal">Nhân</button>
+        <button type="submit" value="/" name="cal">Chia</button>
+    </div>
+}
+
+
